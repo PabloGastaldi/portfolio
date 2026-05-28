@@ -1,14 +1,28 @@
 import Image from 'next/image';
-import type { Project } from '@/types/content';
+import type { Project, ProjectLink } from '@/types/content';
 
 interface ProjectCardProps {
   project: Project;
 }
 
+function isExternal(href: string) {
+  return href.startsWith('http://') || href.startsWith('https://');
+}
+
+function linkRel(href: string) {
+  return isExternal(href) || href.endsWith('.pdf') ? 'noopener noreferrer' : undefined;
+}
+
+function linkTarget(href: string) {
+  return isExternal(href) || href.endsWith('.pdf') ? '_blank' : undefined;
+}
+
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
-      className={`flex flex-col gap-4 rounded-xl border border-border bg-muted overflow-hidden${project.featured ? ' sm:col-span-2' : ''}`}
+      className={`flex flex-col gap-4 overflow-hidden rounded-xl border border-border bg-muted${
+        project.featured ? ' sm:col-span-2' : ''
+      }`}
     >
       {project.image ? (
         <div className="relative h-52 w-full sm:h-64">
@@ -32,29 +46,20 @@ export function ProjectCard({ project }: ProjectCardProps) {
       )}
 
       <div className="flex flex-col gap-4 p-6">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h3 className="text-lg font-semibold">{project.title}</h3>
-            {project.featured && (
-              <span className="mt-1 inline-block rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
-                Proyecto destacado
-              </span>
-            )}
-          </div>
-          {project.url && (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ver ${project.title} (abre en nueva pestaña)`}
-              className="focus-visible:ring-accent shrink-0 rounded text-sm text-accent underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
-            >
-              Ver proyecto ↗
-            </a>
+        <div className="flex flex-col gap-1">
+          <h3 className="text-lg font-semibold">{project.title}</h3>
+          {project.featured && (
+            <span className="inline-block w-fit rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
+              Proyecto destacado
+            </span>
           )}
         </div>
 
         <p className="text-sm leading-relaxed">{project.summary}</p>
+
+        {project.featured && project.description && (
+          <p className="text-sm leading-relaxed text-foreground/70">{project.description}</p>
+        )}
 
         {project.highlights.length > 0 && (
           <ul className="flex flex-col gap-1">
@@ -78,6 +83,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
               >
                 {tech}
               </span>
+            ))}
+          </div>
+        )}
+
+        {project.links.length > 0 && (
+          <div className="flex flex-wrap gap-3 pt-1">
+            {project.links.map((link: ProjectLink) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target={linkTarget(link.href)}
+                rel={linkRel(link.href)}
+                className="focus-visible:ring-accent inline-flex items-center gap-1 rounded text-sm font-medium text-accent underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+              >
+                {link.label} ↗
+              </a>
             ))}
           </div>
         )}

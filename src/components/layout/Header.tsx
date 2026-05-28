@@ -5,10 +5,9 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Container } from '@/components/ui/Container';
 
 const NAV_LINKS = [
-  { href: '#hero', label: 'Inicio' },
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#experiencia', label: 'Experiencia' },
+  { href: '#intro', label: 'Inicio' },
   { href: '#proyectos', label: 'Proyectos' },
+  { href: '#experiencia', label: 'Experiencia' },
   { href: '#skills', label: 'Skills' },
   { href: '#contacto', label: 'Contacto' },
 ];
@@ -40,11 +39,11 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 hidden border-b border-border bg-background/80 backdrop-blur-sm md:block">
       <Container>
         <div className="flex h-16 items-center justify-between gap-4">
           <a
-            href="#hero"
+            href="#top"
             className="focus-visible:ring-accent shrink-0 rounded text-sm font-semibold focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
             aria-label="Volver al inicio"
           >

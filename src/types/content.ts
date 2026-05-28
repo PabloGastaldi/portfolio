@@ -2,6 +2,8 @@ export type Pillar = 'data' | 'ai' | 'comex' | 'languages';
 
 export interface Profile {
   name: string;
+  titlePrefix?: string;
+  disciplines: string[];
   tagline: string;
   positioningLine: string;
   bio: string;
@@ -11,18 +13,22 @@ export interface Profile {
   languages: { name: string; level: string }[];
 }
 
+export interface ProjectLink {
+  label: string;
+  href: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
   summary: string;
   description: string;
-  url?: string;
-  repo?: string;
   image?: string;
   stack: string[];
   highlights: string[];
   featured?: boolean;
   order: number;
+  links: ProjectLink[];
 }
 
 export interface Experience {

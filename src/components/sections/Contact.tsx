@@ -58,21 +58,23 @@ export function Contact() {
             </p>
           )}
 
-          {status === 'success' && (
-            <p className="rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-700 dark:text-green-400">
-              Mensaje enviado. Te respondo a la brevedad.
-            </p>
-          )}
+          <div role="status" aria-live="polite" aria-atomic="true">
+            {status === 'success' && (
+              <p className="rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-700 dark:text-green-400">
+                Mensaje enviado. Te respondo a la brevedad.
+              </p>
+            )}
 
-          {status === 'error' && (
-            <p className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-400">
-              No se pudo enviar el mensaje. Escribime directamente a{' '}
-              <a href={`mailto:${profile.email}`} className="underline">
-                {profile.email}
-              </a>
-              .
-            </p>
-          )}
+            {status === 'error' && (
+              <p className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-700 dark:text-red-400">
+                No se pudo enviar el mensaje. Escribime directamente a{' '}
+                <a href={`mailto:${profile.email}`} className="underline">
+                  {profile.email}
+                </a>
+                .
+              </p>
+            )}
+          </div>
 
           <div className="flex flex-col gap-1.5">
             <label htmlFor="contact-name" className="text-sm font-medium">

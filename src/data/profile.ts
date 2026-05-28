@@ -2,6 +2,8 @@ import type { Profile } from '@/types/content';
 
 export const profile: Profile = {
   name: 'Pablo Gastaldi',
+  titlePrefix: 'Lic.',
+  disciplines: ['Relaciones Internacionales', 'Data Analysis', 'AI Developer'],
   tagline: 'Lic. en Relaciones Internacionales, analista de datos y builder con IA.',
   positioningLine:
     'Cruzo contexto, datos y código para entender problemas completos y construir lo que los resuelve.',

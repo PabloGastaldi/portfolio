@@ -1,19 +1,22 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import { ThemeScript } from './theme-script';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { HeroProvider } from '@/lib/hero/HeroProvider';
 import { siteMetadata } from '@/lib/site';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const sans = Space_Grotesk({
+  variable: '--font-sans',
   subsets: ['latin'],
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const mono = JetBrains_Mono({
+  variable: '--font-mono',
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -25,10 +28,11 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     type: 'website',
     url: siteMetadata.url,
-    images: [{ url: siteMetadata.ogImage, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
+    title: siteMetadata.title,
+    description: siteMetadata.description,
   },
 };
 
@@ -43,11 +47,13 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-background font-sans text-foreground antialiased`}
+        className={`${sans.variable} ${mono.variable} bg-background font-sans text-foreground antialiased`}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <HeroProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </HeroProvider>
       </body>
     </html>
   );

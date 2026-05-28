@@ -1,7 +1,7 @@
 export const siteMetadata = {
-  title: 'Pablo Gastaldi — Geopolítica, Comex, Datos e IA',
+  title: 'Pablo Gastaldi — Portfolio',
   description:
-    'Analista de datos y builder con IA. Cruce de RRII, comercio exterior, análisis de datos y desarrollo con agentes.',
+    'Lic. en Relaciones Internacionales, analista de datos y builder con IA. Construyo software real (RAG, embeddings, APIs de modelos) cruzando geopolítica tecnológica, comercio exterior y datos.',
   url: 'https://pablogastaldi.com',
-  ogImage: '/og-image.png',
+  ogImage: '/opengraph-image',
 } as const;
