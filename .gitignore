@@ -1,0 +1,19 @@
+# deps
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# env
+.env
+.env*.local
+
+# Vercel
+.vercel
+
+# system
+.DS_Store
+
+# SDD internal
+.atl/

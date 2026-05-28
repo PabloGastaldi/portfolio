@@ -1,0 +1,69 @@
+schema: spec-driven
+
+project: Portfolio
+initialized: 2026-05-28
+artifact_store: openspec
+
+context: |
+  Project: Personal portfolio site for Pablo Gastaldi — data analyst and AI builder.
+  Goal: Professional presentation to recruiters and companies. Not a product.
+  Stack: Next.js (App Router) + TypeScript + Tailwind CSS, deployed to Vercel.
+  Rendering: SSG/static. No database. Content lives in src/data/*.ts files.
+  Contact form: Formspree / mailto (no backend server).
+  State: Greenfield — package.json does not exist yet (pre-scaffold).
+  Pillars: RRII/geopolitics, Comex, Data analysis, AI development.
+  Sections: Hero, About, Experience, Projects, Skills, Contact.
+  Theme: Light/dark toggle. Mobile-first. Accessible HTML.
+
+testing:
+  strict_tdd: false
+  status: to-be-configured
+  reason: >
+    No package.json exists yet. Testing toolchain will be configured during
+    the scaffold apply phase. Strict TDD cannot be enabled until a test runner
+    is installed and confirmed.
+  layers:
+    unit: false
+    integration: false
+    e2e: false
+  coverage: false
+  test_command: ""
+  build_command: "next build"
+  type_check_command: "tsc --noEmit"
+
+quality:
+  linter: eslint
+  linter_command: ""
+  formatter: prettier
+  formatter_command: ""
+  type_checker: tsc
+  type_checker_command: "tsc --noEmit"
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - State which of the four pillars a change serves
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+    - Texts on the site MUST be in Rioplatense Spanish; code/identifiers in English
+  design:
+    - Include component tree for UI sections
+    - Document architecture decisions with rationale
+    - Follow atomic design + container/presentational separation
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+    - Data files (src/data/*.ts) must be updated alongside components
+  apply:
+    - Follow existing code patterns
+    - One component per section (no monolithic page files)
+    - No fake/placeholder content in final output
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: "next build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
