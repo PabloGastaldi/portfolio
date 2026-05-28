@@ -5,6 +5,7 @@ interface ExperienceItemProps {
 }
 
 function formatDate(dateStr: string): string {
+  if (dateStr.startsWith('TODO')) return dateStr;
   const [year, month] = dateStr.split('-');
   const date = new Date(Number(year), Number(month) - 1);
   return date.toLocaleDateString('es-AR', { month: 'short', year: 'numeric' });
@@ -20,13 +21,24 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
         <div>
           <h3 className="font-semibold">{experience.role}</h3>
           <p className="text-sm text-foreground/70">
-            {experience.organization}
+            {experience.url ? (
+              <a
+                href={experience.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-visible:ring-accent underline-offset-4 hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+              >
+                {experience.organization}
+              </a>
+            ) : (
+              experience.organization
+            )}
             {experience.location && ` — ${experience.location}`}
           </p>
         </div>
-        <p className="shrink-0 text-sm text-foreground/50">
+        <time className="shrink-0 text-sm text-foreground/50">
           {start} – {end}
-        </p>
+        </time>
       </div>
 
       <p className="text-sm leading-relaxed">{experience.summary}</p>

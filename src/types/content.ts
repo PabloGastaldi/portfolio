@@ -3,6 +3,7 @@ export type Pillar = 'data' | 'ai' | 'comex' | 'languages';
 export interface Profile {
   name: string;
   tagline: string;
+  positioningLine: string;
   bio: string;
   location: string;
   email: string;
@@ -17,6 +18,7 @@ export interface Project {
   description: string;
   url?: string;
   repo?: string;
+  image?: string;
   stack: string[];
   highlights: string[];
   featured?: boolean;
@@ -27,6 +29,7 @@ export interface Experience {
   slug: string;
   role: string;
   organization: string;
+  url?: string;
   location?: string;
   startDate: string;
   endDate?: string;

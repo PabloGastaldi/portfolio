@@ -3,17 +3,18 @@ import type { Experience } from '@/types/content';
 export const experiences: Experience[] = [
   {
     slug: 'trade-ai',
-    role: 'Fundador y desarrollador',
+    role: 'Builder / Founder',
     organization: 'trade.ai',
+    url: 'https://tradeai.ar',
     location: 'Santa Fe, Argentina',
     startDate: '2024-01',
     summary:
-      'Construí una plataforma de inteligencia comercial para importadores y exportadores argentinos usando RAG, embeddings y APIs de modelos de lenguaje.',
+      'Plataforma de inteligencia para comercio exterior construida con IA: RAG, embeddings e integración de APIs de modelos. Convierte normativa, NCM y datos de exportación en respuestas accionables.',
     highlights: [
       'Diseño y desarrollo end-to-end de la plataforma',
       'Pipeline de RAG sobre corpus de normativa NCM y AFIP',
       'Integración con APIs de modelos (Claude, OpenAI)',
-      'Deploy en producción con usuarios reales',
+      'Deploy en producción — plataforma funcional con usuarios reales',
     ],
     order: 0,
   },
@@ -22,31 +23,27 @@ export const experiences: Experience[] = [
     role: 'Pasante de comercio exterior',
     organization: 'ACICE',
     location: 'Santa Fe, Argentina',
-    startDate: '2023-01',
-    endDate: '2023-12',
+    startDate: 'TODO: completar desde CV',
+    endDate: 'TODO: completar desde CV',
     summary:
-      'Asistencia operativa en operaciones de comercio exterior: clasificación arancelaria, liquidaciones, trámites ante Aduana y AFIP.',
+      'TODO: completar desde CV — descripción de responsabilidades en la pasantía de comex.',
     highlights: [
       'Clasificación de mercaderías según NCM',
-      'Armado de liquidaciones de exportación e importación',
       'Contacto con despachantes y organismos públicos',
+      'Creación de base de datos de exportaciones de empresas de Santa Fe',
+      'Análisis de datos para identificar oportunidades de exportación',
     ],
     order: 1,
   },
-  {
+  /*{
     slug: 'banco-santa-fe',
-    role: 'Pasante',
+    role: 'TODO: completar desde CV',
     organization: 'Banco de Santa Fe',
     location: 'Santa Fe, Argentina',
-    startDate: '2022-06',
-    endDate: '2022-12',
-    summary:
-      'Pasantía en el área de análisis de datos. Trabajo con reportes, dashboards y datos operativos del banco.',
-    highlights: [
-      'Construcción de reportes en Excel y Power BI',
-      'Análisis de datos operativos y cartera de clientes',
-      'Soporte al equipo de inteligencia de negocios',
-    ],
+    startDate: 'TODO: completar desde CV',
+    endDate: 'TODO: completar desde CV',
+    summary: 'TODO: completar desde CV — descripción del rol y responsabilidades.',
+    highlights: [],
     order: 2,
-  },
+  },*/
 ];

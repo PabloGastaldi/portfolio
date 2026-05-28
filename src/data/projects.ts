@@ -4,8 +4,9 @@ export const projects: Project[] = [
   {
     slug: 'trade-ai',
     title: 'trade.ai',
+    image: '/projects/trade-ai.png',
     summary:
-      'Plataforma de inteligencia comercial para importadores y exportadores argentinos. Construida con RAG, embeddings y APIs de modelos de lenguaje.',
+      'Plataforma de inteligencia para comercio exterior. Construida con IA: RAG, embeddings e integración de APIs de modelos. Convierte normativa, NCM y datos de exportación en decisiones accionables.',
     description:
       'trade.ai permite consultar el corpus de normativa de comercio exterior (NCM, aranceles, AFIP, Aduana) en lenguaje natural. Usa RAG sobre documentos reales y modelos de embeddings para recuperar contexto relevante antes de generar respuestas. No es un chatbot genérico: es un sistema especializado en el dominio de comex argentino.',
     url: 'https://tradeai.ar',
@@ -13,7 +14,7 @@ export const projects: Project[] = [
     highlights: [
       'RAG sobre corpus de normativa NCM y AFIP',
       'Pipeline de embeddings para recuperación semántica',
-      'Integración con APIs de modelos de lenguaje (Claude, OpenAI)',
+      'Integración con APIs de modelos (Claude, OpenAI)',
       'UI conversacional para consultas en lenguaje natural',
       'Plataforma funcional en producción — no un demo',
     ],
@@ -21,19 +22,12 @@ export const projects: Project[] = [
     order: 0,
   },
   {
-    slug: 'portfolio',
-    title: 'Este portfolio',
-    summary:
-      'Sitio personal construido con Next.js 15, TypeScript y Tailwind CSS. Scaffolded con Claude Code y SDD.',
-    description:
-      'Portfolio estático con App Router, tema claro/oscuro sin dependencias externas, y una capa de datos tipada que hace trivial agregar proyectos o experiencias.',
-    url: 'https://pablogastaldi.com',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
-    highlights: [
-      'Tema claro/oscuro sin next-themes (FOUC mitigado con script pre-paint)',
-      'Data layer tipada: agregar un proyecto = un objeto literal',
-      'SSG puro — cero JS del lado servidor',
-    ],
+    slug: 'proyecto-2',
+    title: 'TODO: Próximo proyecto',
+    summary: 'TODO: completar con el próximo proyecto.',
+    description: 'TODO: completar con descripción del proyecto.',
+    stack: [],
+    highlights: [],
     featured: false,
     order: 1,
   },

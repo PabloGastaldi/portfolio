@@ -10,7 +10,7 @@ export function Projects() {
   });
 
   return (
-    <Section id="projects" label="Proyectos" heading="Proyectos">
+    <Section id="proyectos" label="Proyectos" heading="Proyectos">
       <div className="grid gap-6 sm:grid-cols-2">
         {sorted.map((project) => (
           <ProjectCard key={project.slug} project={project} />
