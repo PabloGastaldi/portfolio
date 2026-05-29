@@ -6,6 +6,7 @@ export interface Profile {
   disciplines: string[];
   tagline: string;
   positioningLine: string;
+  intro: string;
   bio: string;
   location: string;
   email: string;

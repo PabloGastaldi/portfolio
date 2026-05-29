@@ -14,11 +14,14 @@ export function ScrollIntro() {
     >
       <Container>
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-5xl leading-[0.95] font-bold tracking-tight sm:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className="text-3xl leading-[1] font-bold tracking-tight sm:text-4xl lg:text-8xl">
             {fullName}
           </h1>
-          <p className="mt-6 text-base font-medium text-foreground/55 sm:mt-8 sm:text-lg lg:text-xl">
+          <p className="mt-5 text-[11px] font-medium tracking-[0.38em] text-foreground/45 uppercase sm:mt-6 sm:text-sm">
             {profile.disciplines.join(' · ')}
+          </p>
+          <p className="sm:text-md mt-20 max-w-3xl text-base leading-relaxed tracking-[0.005em] whitespace-pre-line text-foreground/75 sm:mt-24">
+            {profile.intro}
           </p>
         </div>
       </Container>
