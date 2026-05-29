@@ -24,16 +24,31 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.url),
   title: siteMetadata.title,
   description: siteMetadata.description,
+  alternates: {
+    canonical: siteMetadata.url,
+  },
   openGraph: {
+    type: 'website',
+    locale: siteMetadata.locale,
+    url: siteMetadata.url,
+    siteName: siteMetadata.siteName,
     title: siteMetadata.title,
     description: siteMetadata.description,
-    type: 'website',
-    url: siteMetadata.url,
+    images: [
+      {
+        url: siteMetadata.ogImage,
+        width: siteMetadata.ogImageWidth,
+        height: siteMetadata.ogImageHeight,
+        alt: siteMetadata.ogImageAlt,
+        type: 'image/png',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteMetadata.title,
     description: siteMetadata.description,
+    images: [siteMetadata.ogImage],
   },
 };
 

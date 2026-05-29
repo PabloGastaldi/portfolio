@@ -1,7 +1,12 @@
 export const siteMetadata = {
   title: 'Pablo Gastaldi — Portfolio',
   description:
-    'Lic. en Relaciones Internacionales, analista de datos y builder con IA. Construyo software real (RAG, embeddings, APIs de modelos) cruzando geopolítica tecnológica, comercio exterior y datos.',
+    'Vengo de Relaciones Internacionales y hoy construyo software con IA y análisis de datos. Convierto contexto y datos en herramientas reales.',
   url: 'https://pablogastaldi.com',
-  ogImage: '/opengraph-image',
+  siteName: 'Pablo Gastaldi',
+  ogImage: '/projects/og-image.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Pablo Gastaldi — Portfolio',
+  locale: 'es_AR',
 } as const;
