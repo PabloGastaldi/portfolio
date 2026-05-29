@@ -1,7 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { cv } from '@/data/desktop';
+const cv = {
+  pdfPath: '/cv/Pablo-Gastaldi-CV.pdf',
+  downloadName: 'Pablo-Gastaldi-CV.pdf',
+};
 
 type Availability = 'checking' | 'available' | 'missing';
 
