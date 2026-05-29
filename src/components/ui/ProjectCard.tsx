@@ -18,11 +18,14 @@ function linkTarget(href: string) {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const isWide = project.featured || project.wide;
+  const borderStyle = project.upcoming ? 'border-dashed border-foreground/15' : 'border-border';
+
   return (
     <article
-      className={`flex flex-col gap-4 overflow-hidden rounded-xl border border-border bg-muted${
-        project.featured ? ' sm:col-span-2' : ''
-      }`}
+      className={`flex flex-col gap-4 overflow-hidden rounded-xl border bg-muted ${borderStyle}${
+        isWide ? ' sm:col-span-2' : ''
+      }${project.upcoming ? ' opacity-80' : ''}`}
     >
       {project.image ? (
         <div className="relative h-52 w-full sm:h-64">
@@ -53,11 +56,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
               Proyecto destacado
             </span>
           )}
+          {project.upcoming && (
+            <span className="inline-block w-fit rounded-full border border-foreground/20 px-2 py-0.5 text-xs font-medium text-foreground/60">
+              En construcción
+            </span>
+          )}
         </div>
 
         <p className="text-sm leading-relaxed">{project.summary}</p>
 
-        {project.featured && project.description && (
+        {(project.featured || project.wide) && project.description && (
           <p className="text-sm leading-relaxed text-foreground/70">{project.description}</p>
         )}
 
@@ -79,7 +87,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.stack.map((tech) => (
               <span
                 key={tech}
-                className="rounded-md border border-border px-2 py-0.5 text-xs font-medium"
+                className="rounded-md border border-border bg-background/40 px-3 py-1 text-sm font-medium text-foreground/85"
               >
                 {tech}
               </span>

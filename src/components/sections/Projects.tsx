@@ -3,11 +3,7 @@ import { ProjectCard } from '@/components/ui/ProjectCard';
 import { projects } from '@/data/projects';
 
 export function Projects() {
-  const sorted = [...projects].sort((a, b) => {
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    return a.order - b.order;
-  });
+  const sorted = [...projects].sort((a, b) => a.order - b.order);
 
   return (
     <Section id="proyectos" label="Proyectos" heading="Proyectos">

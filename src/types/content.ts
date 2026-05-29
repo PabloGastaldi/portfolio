@@ -28,6 +28,8 @@ export interface Project {
   stack: string[];
   highlights: string[];
   featured?: boolean;
+  wide?: boolean;
+  upcoming?: boolean;
   order: number;
   links: ProjectLink[];
 }
