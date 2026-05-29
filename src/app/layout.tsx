@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { ThemeScript } from './theme-script';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -54,6 +55,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </HeroProvider>
+        <Analytics />
       </body>
     </html>
   );
