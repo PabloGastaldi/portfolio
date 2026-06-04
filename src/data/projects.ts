@@ -15,7 +15,7 @@ export const projects: Project[] = [
       'Pipeline de embeddings para recuperación semántica',
       'Integración con APIs de modelos (Claude, OpenAI)',
       'UI conversacional para consultas en lenguaje natural',
-      'Plataforma funcional en producción — no un demo',
+      'Plataforma funcional en producción',
     ],
     featured: true,
     order: 0,
@@ -42,15 +42,24 @@ export const projects: Project[] = [
   },
   {
     slug: 'litio-argentina',
-    title: 'Análisis de explotación minera de Litio en Argentina',
+    title: 'Análisis geopolítico-estructural del litio argentino',
+    image: '/projects/mapa_litio_argentina.png',
     summary:
-      'Trabajo en curso: análisis de datos sobre la explotación minera de litio en Argentina, con foco en producción, exportaciones y dinámica geopolítica de minerales críticos.',
-    description: '',
-    stack: [],
-    highlights: [],
-    upcoming: true,
+      'Análisis de la cartera argentina de proyectos de litio. Pipeline completo de datos: ingesta, limpieza, modelado relacional, análisis SQL y visualización geoespacial.',
+    description:
+      'Convierte cuatro bases oficiales del Sistema de Información Abierta a la Comunidad sobre la Actividad Minera (SIACAM) cruzadas con datos globales del USGS en hallazgos publicables sobre el control del capital, la geografía del recurso y la posición de Argentina en la cadena de valor global. Sobre una base PostgreSQL normalizada se ejecutan análisis con SQL avanzado que alimentan visualizaciones en Tableau Public y un mapa cartográfico en QGIS. El resultado es un artículo analítico con tesis propia sobre la doble dependencia del sector argentino y la ventana de oportunidad del ciclo de precios.',
+    stack: ['PostgreSQL', 'Python', 'pandas', 'Tableau', 'QGIS'],
+    highlights: [
+      'Base relacional en PostgreSQL con seis tablas normalizadas y relaciones many-to-many',
+      'Pipeline de ingesta en Python con pandas y psycopg2 sobre fuentes oficiales',
+      'SQL avanzado: CTEs, window functions, JOINs múltiples y limpieza de datos',
+      'Visualizaciones en Tableau Public y mapa georreferenciado en QGIS con capas del IGN',
+      'Artículo analítico de diez páginas con cinco visualizaciones embebidas',
+    ],
     order: 2,
-    links: [],
+    links: [
+      { label: 'Leer la investigación (PDF)', href: '/investigacion/Litio-Argentina.pdf' },
+    ],
   },
   {
     slug: 'dashboard-finanzas',
