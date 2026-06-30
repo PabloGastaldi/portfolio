@@ -52,12 +52,6 @@ export function Contact() {
     <Section id="contacto" label="Contacto" heading="Contacto">
       <div className="grid gap-12 lg:grid-cols-2">
         <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
-          {!FORMSPREE_ENDPOINT && (
-            <p className="rounded-lg border border-border bg-muted px-4 py-3 text-xs text-foreground/60">
-              Modo mailto activo (configurá NEXT_PUBLIC_FORMSPREE_ENDPOINT para envío directo).
-            </p>
-          )}
-
           <div role="status" aria-live="polite" aria-atomic="true">
             {status === 'success' && (
               <p className="rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-sm text-green-700 dark:text-green-400">
