@@ -58,7 +58,8 @@ export const projects: Project[] = [
     ],
     order: 2,
     links: [
-      { label: 'Leer la investigación (PDF)', href: '/investigacion/Litio-Argentina.pdf' },
+      { label: 'Leer en Diploactiva', href: 'https://diploactiva.com/2026/06/24/el-mapa-del-litio-argentino/' },
+      { label: 'Descargar PDF', href: '/investigacion/Litio-Argentina.pdf' },
     ],
   },
   {
