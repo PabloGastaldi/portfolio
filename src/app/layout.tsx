@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     images: [siteMetadata.ogImage],
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
