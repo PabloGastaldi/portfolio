@@ -20,6 +20,28 @@ function linkTarget(href: string) {
 export function ProjectCard({ project }: ProjectCardProps) {
   const isWide = project.featured || project.wide;
   const borderStyle = project.upcoming ? 'border-dashed border-foreground/15' : 'border-border';
+  const primaryLink = project.links[0];
+
+  const imageBlock = project.image ? (
+    <div className="relative h-52 w-full sm:h-64">
+      <Image
+        src={project.image}
+        alt={`Captura de pantalla de ${project.title}`}
+        fill
+        className="object-cover"
+        sizes="(max-width: 640px) 100vw, 50vw"
+      />
+    </div>
+  ) : (
+    <div
+      className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-accent/20 via-accent/10 to-muted sm:h-52"
+      aria-hidden="true"
+    >
+      <span className="text-4xl font-bold text-accent/40">
+        {project.title.charAt(0).toUpperCase()}
+      </span>
+    </div>
+  );
 
   return (
     <article
@@ -27,25 +49,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
         isWide ? ' sm:col-span-2' : ''
       }${project.upcoming ? ' opacity-80' : ''}`}
     >
-      {project.image ? (
-        <div className="relative h-52 w-full sm:h-64">
-          <Image
-            src={project.image}
-            alt={`Captura de pantalla de ${project.title}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, 50vw"
-          />
-        </div>
-      ) : (
-        <div
-          className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-accent/20 via-accent/10 to-muted sm:h-52"
-          aria-hidden="true"
+      {primaryLink ? (
+        <a
+          href={primaryLink.href}
+          target={linkTarget(primaryLink.href)}
+          rel={linkRel(primaryLink.href)}
+          aria-label={`${primaryLink.label} — ${project.title}`}
+          className="focus-visible:ring-accent block transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
         >
-          <span className="text-4xl font-bold text-accent/40">
-            {project.title.charAt(0).toUpperCase()}
-          </span>
-        </div>
+          {imageBlock}
+        </a>
+      ) : (
+        imageBlock
       )}
 
       <div className="flex flex-col gap-4 p-6">

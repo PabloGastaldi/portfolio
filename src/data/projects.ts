@@ -40,7 +40,7 @@ export const projects: Project[] = [
       'Transformación de datos en información orientada a toma de decisiones',
     ],
     featured: false,
-    order: 1,
+    order: 2,
     links: [{ label: 'Ver perfil exportador', href: 'https://santafeciudad.gov.ar/wp-content/uploads/2026/05/SF_PerfilExportador_ACICE_2025.pdf' }],
   },
   {
@@ -59,7 +59,7 @@ export const projects: Project[] = [
       'Visualizaciones en Tableau Public y mapa georreferenciado en QGIS con capas del IGN',
       'Artículo analítico de diez páginas con cinco visualizaciones embebidas',
     ],
-    order: 2,
+    order: 3,
     links: [
       { label: 'Leer en Diploactiva', href: 'https://diploactiva.com/2026/06/24/el-mapa-del-litio-argentino/' },
       { label: 'Descargar PDF', href: '/investigacion/Litio-Argentina.pdf' },
@@ -81,8 +81,9 @@ export const projects: Project[] = [
       'Dashboards con charts (Recharts), resúmenes escritos y chat interactivo sobre los datos',
       'Cálculos exactos, sin aproximaciones del modelo',
     ],
-    order: 3,
+    order: 1,
     links: [
+      { label: 'Visitar Analix', href: 'https://analix-nine.vercel.app' },
       { label: 'Ver en GitHub', href: 'https://github.com/PabloGastaldi/Analix' },
     ],
   },
