@@ -19,7 +19,10 @@ export const projects: Project[] = [
     ],
     featured: true,
     order: 0,
-    links: [{ label: 'Visitar tradeai.ar', href: 'https://tradeai.ar' }],
+    links: [
+      { label: 'Visitar tradeai.ar', href: 'https://tradeai.ar' },
+      { label: 'Ver en GitHub', href: 'https://github.com/PabloGastaldi/trade-ai' },
+    ],
   },
   {
     slug: 'perfil-exportador',
@@ -63,6 +66,27 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'analix',
+    title: 'Analix',
+    image: '/projects/analix.png',
+    summary:
+      'Herramienta que convierte pedidos en lenguaje natural sobre archivos CSV o Excel en dashboards interactivos. El cómputo corre en el browser con DuckDB-WASM y el modelo solo ve el schema — los datos crudos nunca salen del dispositivo del usuario.',
+    description:
+      'Analix permite a usuarios no técnicos analizar sus propios datos sin escribir SQL. Un archivo CSV o Excel se carga localmente, DuckDB-WASM lo procesa en el browser, y la LLM traduce la pregunta en lenguaje natural a la query correspondiente. El modelo recibe únicamente el schema y estadísticas del dataset, nunca las filas reales, lo que garantiza privacidad por diseño. La salida combina charts, resúmenes escritos y un chat interactivo para seguir preguntando sobre los mismos datos.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind', 'DuckDB-WASM', 'Recharts', 'Claude API'],
+    highlights: [
+      'Interfaz en lenguaje natural que traduce pedidos a SQL sobre DuckDB-WASM',
+      'Cómputo 100% en el browser: los datos crudos nunca salen del dispositivo del usuario',
+      'Privacidad por diseño: el modelo recibe schema y estadísticas, no filas',
+      'Dashboards con charts (Recharts), resúmenes escritos y chat interactivo sobre los datos',
+      'Cálculos exactos, sin aproximaciones del modelo',
+    ],
+    order: 3,
+    links: [
+      { label: 'Ver en GitHub', href: 'https://github.com/PabloGastaldi/Analix' },
+    ],
+  },
+  {
     slug: 'dashboard-finanzas',
     title: 'Dashboard de operaciones bursátiles',
     image: '/projects/dashboard-finanzas.png',
@@ -77,7 +101,7 @@ export const projects: Project[] = [
       'Foco en entender el comportamiento, no en medir el rendimiento',
       'Roadmap: PnL, curva de equity, drawdown y métricas de eficiencia',
     ],
-    order: 3,
+    order: 4,
     links: [],
   },
 ];
